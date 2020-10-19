@@ -1,0 +1,24 @@
+<h1>Stupid Coaching</h1>
+
+<div>
+<p><%= @answer %></p>
+<h2>- You</h2>
+</div>
+
+<div id="coach">
+<p>
+<% if !@answer.nil? %>
+  <% if @answer == 'I am going to work' %>
+    <%='Great!' %>
+  <% elsif @answer.include?('?') %>
+    <%='Silly question, get dressed and go to work!'%>
+  <% else %>
+    <%= "I don't care, get dressed and go to work!" %>
+  <%end%>
+<%end%>
+</p>
+
+<h2>- The coach</h2>
+</div>
+
+<%= link_to 'Ask another question', '/ask' %>
